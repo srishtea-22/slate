@@ -3,9 +3,22 @@ import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { toast } from "sonner";
 
 const DocumentsPage = () => {
+  const create = useMutation(api.documents.create);
   const { user } = useUser();
+  const onCreate = () => {
+    const promise = create({ title: "Untitled" });
+
+    toast.promise(promise, {
+      loading: "Creating new note...",
+      success: "New note created!",
+      error: "Failed to create note!",
+    });
+  };
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
       <Image
@@ -25,7 +38,7 @@ const DocumentsPage = () => {
       <h2 className="text-lg font-medium">
         Welcome to {user?.firstName}&apos;s slate
       </h2>
-      <Button>
+      <Button onClick={onCreate}>
         <PlusCircle className="h-4 w-4" />
         Create a Note
       </Button>
