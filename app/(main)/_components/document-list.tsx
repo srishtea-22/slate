@@ -57,7 +57,7 @@ export const DocumentList = ({
       {documents.length === 0 && level > 0 && (
         <p
           style={{ paddingLeft: `${level * 12 + 25}px` }}
-          className="text-sm font-medium text-muted-foreground/80 last:block"
+          className="text-sm font-medium text-muted-foreground/80 last:block p-1"
         >
           No pages inside
         </p>
