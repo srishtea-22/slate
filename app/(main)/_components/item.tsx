@@ -88,6 +88,7 @@ export const Item = ({
       success: "Note moved to trash!",
       error: "Failed to archive note!",
     });
+    router.push("/documents");
   };
 
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;

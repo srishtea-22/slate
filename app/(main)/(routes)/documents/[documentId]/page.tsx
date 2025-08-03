@@ -7,7 +7,8 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useMutation, useQuery } from "convex/react";
 import { use } from "react";
-import { Editor } from "@/components/editor";
+import dynamic from "next/dynamic";
+import { useMemo } from "react";
 
 interface DocumentPageProps {
   params: Promise<{
@@ -16,6 +17,10 @@ interface DocumentPageProps {
 }
 
 const DocumentIdPage = ({ params }: DocumentPageProps) => {
+  const Editor = useMemo(
+    () => dynamic(() => import("@/components/editor"), { ssr: false }),
+    [],
+  );
   const { documentId } = use(params);
   const document = useQuery(api.documents.getById, {
     documentId,
@@ -25,7 +30,7 @@ const DocumentIdPage = ({ params }: DocumentPageProps) => {
   const onChange = (content: string) => {
     update({
       id: documentId,
-      content: content
+      content: content,
     });
   };
 
@@ -51,7 +56,7 @@ const DocumentIdPage = ({ params }: DocumentPageProps) => {
       <Cover url={document.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar initialData={document} />
-        <Editor onChange={onChange} initialContent={document.content}/>
+        <Editor onChange={onChange} initialContent={document.content} />
       </div>
     </div>
   );
