@@ -1,6 +1,6 @@
 "use client";
 
-import { Toolbar } from "@/app/(main)/_components/toolbar";
+import { Toolbar } from "@/components/toolbar";
 import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
