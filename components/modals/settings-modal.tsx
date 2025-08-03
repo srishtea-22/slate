@@ -4,17 +4,9 @@ import { useSettings } from "@/hooks/use-settings";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Label } from "../ui/label";
 import { ModeToggle } from "../mode-toggle";
-import { useEffect, useState } from "react";
 
 export const SettingsModal = () => {
   const settings = useSettings();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) return null;
 
   return (
     <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>
