@@ -26,14 +26,14 @@ const DocumentsPage = () => {
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
       <Image
-        src="/hero-light.webp"
+        src="/hero.png"
         alt="Empty"
         height="300"
         width="300"
         className="dark:hidden"
       />
       <Image
-        src="/hero-light.webp" // to be changed
+        src="/hero-dark.png"
         alt="Empty"
         height="300"
         width="300"

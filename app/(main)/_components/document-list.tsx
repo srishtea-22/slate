@@ -6,7 +6,6 @@ import { useQuery } from "convex/react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Item } from "./item";
-import { cn } from "@/lib/utils";
 import { FileIcon } from "lucide-react";
 
 interface DocumentListProps {
@@ -34,7 +33,7 @@ export const DocumentList = ({
     parentDocument: parentDocumentId,
   });
 
-  const onRidirect = (documentId: string) => {
+  const onRedirect = (documentId: string) => {
     router.push(`/documents/${documentId}`);
   };
 
@@ -67,7 +66,7 @@ export const DocumentList = ({
           <Item
             label={document.title}
             id={document._id}
-            onClick={() => onRidirect(document._id)}
+            onClick={() => onRedirect(document._id)}
             icon={FileIcon}
             documentIcon={document.icon}
             onExpand={() => onExpand(document._id)}

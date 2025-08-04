@@ -41,7 +41,7 @@ export const Banner = ({ documentId }: BannerProps) => {
 
   return (
     <div className="w-full bg-rose-500 text-sm text-center text-white flex items-center justify-center p-2 gap-x-2">
-      <p>This page is in the Trash.</p>
+      <p>This page is in Trash.</p>
       <Button
         size="sm"
         variant="outline"

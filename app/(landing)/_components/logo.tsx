@@ -9,16 +9,16 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <div className="hidden md:flex items-center">
+    <div className="hidden md:flex items-center gap-x-1">
       <Image
-        src="/logo.webp"
+        src="/logo.png"
         height="20"
         width="20"
         alt="Logo"
         className="dark:hidden"
       />
       <Image
-        src="/logo.webp" // to be changed
+        src="/logo-dark.png"
         height="20"
         width="20"
         alt="Logo"

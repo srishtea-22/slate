@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/logo.webp",
-        href: "/logo.webp",
+        url: "/logo-dark.png",
+        href: "/logo-dark.png",
       },
       {
         media: "(prefers-color-scheme: light)",
-        url: "/logo.webp",
-        href: "/logo.webp",
+        url: "/logo.png",
+        href: "/logo.png",
       },
     ],
   },
